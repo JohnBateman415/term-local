@@ -93,12 +93,12 @@ caption {
   <!--vvvvvvvv JAVASCRIPT GOES BELOW THIS COMMENT vvvvvvvv -->
   <script>
 let obj1 = {
-  name:         'John 11111',
+  name:         'John Adams',
   email:        '1@yoohoo.com',
   inquiryType:  'General',
-  phone1:       '415-652-9999',
+  phone1:       '415-652-1111',
   ph1type:      'Mobile',
-  phone2:       '415-545-9999 x89893',
+  phone2:       '415-545-1111',
   ph2type:      'Business',
   preferredMOC: 'email',
   comment:      '8/4/18 The quick brown fox jumps over the lazy dog',
@@ -106,12 +106,12 @@ let obj1 = {
   }
 
   let obj2 = {
-    name:         'John 2222',
+    name:         'George Warshington',
     email:        '2@yoohoo.com',
     inquiryType:  'General',
-    phone1:       '415-652-9999',
+    phone1:       '415-652-2222',
     ph1type:      'Mobile',
-    phone2:       '415-545-9999 x89893',
+    phone2:       '415-545-2222 x89893',
     ph2type:      'Business',
     preferredMOC: 'email',
     comment:      '8/4/18 The quick brown fox jumps over the lazy dog',
@@ -119,16 +119,16 @@ let obj1 = {
     }
 
     let obj3 = {
-      name:         'John 33333',
+      name:         'Abraham Lincoln',
       email:        'jjc_really3333@yoohoo.com',
       inquiryType:  'General',
-      phone1:       '415-652-9999',
+      phone1:       '415-652-3333',
       ph1type:      'Mobile',
-      phone2:       '415-545-9999 x89893',
+      phone2:       '415-545-3333',
       ph2type:      'Business',
       preferredMOC: 'email',
-      comment:      '8/4/18 The quick brown fox jumps over the lazy dog',
-      needsFollowUp: 'Yes'
+      comment:      '',
+      needsFollowUp: 'No'
       }
 
 let myData = [obj1, obj2,obj3];
@@ -149,27 +149,9 @@ let myData = [obj1, obj2,obj3];
       htmlText += "<td>"+myData[i].comment+"</td>";
       htmlText += "<td>"+myData[i].needsFollowUp+"</td>";
       htmlText += "<td><button class='delete'>Delete</button><button class='update'>Edit</button></td></tr>";
-      //  $('#custTable').append("</tr>");
-      console.log("HTML :"+ htmlText);
     }  //table html buildings loop
     $('#custTable').append(htmlText);
-
-/*
-    <tr>
-      <td>John Jacobson Quagmire Alowicious III</td>
-      <td>jjc_reallylongname@yoohoo.com</td>
-      <td>General</td>
-      <td>415-652-9999</td>
-      <td>Mobile</td>
-      <td>415-545-9999 x89893</td>
-      <td>Business</td>
-      <td>email</td>
-      <td>8/4/18 The quick brown fox jumps over the lazy dog</td>
-      <td>Yes</td>
-      <td class='row controls'><button class='delete'>Delete</button><button class='update'>Edit</button></td>
-    </tr>
-*/
-  });
+  }); //doc-ready
 
   </script>
   <!-- ^^^^^^^^ JAVASCRIPT GOES ABOVE THIS COMMENT ^^^^^^^^ -->
