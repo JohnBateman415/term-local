@@ -14,6 +14,7 @@
 
   body {
     color: black;
+    background-color: rgb(255, 255, 204);
   }
 
   #list-header {
@@ -34,14 +35,22 @@ th, td {
     vertical-align: top;
 }
 
+button {
+  background-color: #9bf442;
+  border-radius: 25px;
+  color: black;
+}
+
 #create {
     height: 3em;
     border-radius: 25px;
-    color: black;
     font-weight: bold;
-    background-color: #9bf442;
 }
 
+caption {
+  font-weight: bold;
+  caption-align: left;
+}
 
   /*^^^^^^^^ CSS GOES ABOVE THIS COMMENT ^^^^^^^^*/
   </style>
@@ -77,7 +86,7 @@ th, td {
      <td>email</td>
      <td>8/4/18 The quick brown fox jumps over the lazy dog</td>
      <td>Yes</td>
-     <td class='row controls'><button>Delete</button><button>Update</button></td>
+     <td class='row controls'><button class='delete'>Delete</button><button class='update'>Edit</button></td>
    </tr>
    <tr>
      <td>John Jacobson</td>
@@ -90,17 +99,20 @@ th, td {
      <td>email</td>
      <td>8/4/18 The quick brown fox jumps over the lazy dog but the giant T-Rex tripped over him and fell down and broke his gluteal bone.</td>
      <td>Yes</td>
+     <td class='row controls'><button class='delete'>Delete</button><button class='update'>Edit</button></td>
    </tr>
  </table>
 <div>
   <p></p>
   <p></p>
  <button id='create'>Add New Row</button>
+ <!-- #create button as well as the #edit will load a form that lays on top of the existing data;
+ 'edit' will just pre-populate fields with existing data; when data in the form is saved it will 'replace' existing row if an edit, or add a new row; both will trigger re-writing of the table with data  ––>
 </div>
   <!--vvvvvvvv JAVASCRIPT GOES BELOW THIS COMMENT vvvvvvvv -->
   <script>
   $(document).ready(function () {
-    console.log("document ready");
+    console.log("eventually this function will 1) read file in and build a table");
   });
 
 
