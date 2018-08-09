@@ -8,7 +8,10 @@
   <meta name="description" content="Manage Contacts">
   <meta name="author" content="John Bateman">
 
+<!--
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+-->
+<script language="JavaScript" type="text/javascript" src="jquery-3.3.1.min.js"></script>
   <style>
   /*vvvvvvvv CSS GOES BELOW THIS COMMENT vvvvvvvv*/
 
@@ -76,19 +79,9 @@ caption {
      <th>Contacted?</th>
      <th>Actions</th>
    </tr>
-     <tr>
-       <td>John Jacobson Quagmire Alowicious III</td>
-       <td>j@yoohoo.com</td>
-       <td>General</td>
-       <td>415-652-9999</td>
-       <td>Mobile</td>
-       <td>415-545-9999 x89893</td>
-       <td>Business</td>
-       <td>email</td>
-       <td>8/4/18 The quick brown fox jumps over the lazy dog</td>
-       <td>Yes</td>
-       <td class='row controls'><button class='delete'>Delete</button><button class='update'>Edit</button></td>
-     </tr>
+   <thead>
+     <tbody>
+     </tbody>
  </table>
 <div>
   <p></p>
@@ -100,8 +93,8 @@ caption {
   <!--vvvvvvvv JAVASCRIPT GOES BELOW THIS COMMENT vvvvvvvv -->
   <script>
 let obj1 = {
-  name:         'John 22222',
-  email:        'jjc_reallylongname@yoohoo.com',
+  name:         'John 11111',
+  email:        '1@yoohoo.com',
   inquiryType:  'General',
   phone1:       '415-652-9999',
   ph1type:      'Mobile',
@@ -113,8 +106,8 @@ let obj1 = {
   }
 
   let obj2 = {
-    name:         'John 33333',
-    email:        'jjc_really3333@yoohoo.com',
+    name:         'John 2222',
+    email:        '2@yoohoo.com',
     inquiryType:  'General',
     phone1:       '415-652-9999',
     ph1type:      'Mobile',
@@ -125,26 +118,42 @@ let obj1 = {
     needsFollowUp: 'Yes'
     }
 
-// let myData = [row1,row2, row1, row2];
+    let obj3 = {
+      name:         'John 33333',
+      email:        'jjc_really3333@yoohoo.com',
+      inquiryType:  'General',
+      phone1:       '415-652-9999',
+      ph1type:      'Mobile',
+      phone2:       '415-545-9999 x89893',
+      ph2type:      'Business',
+      preferredMOC: 'email',
+      comment:      '8/4/18 The quick brown fox jumps over the lazy dog',
+      needsFollowUp: 'Yes'
+      }
+
+let myData = [obj1, obj2,obj3];
 
   $(document).ready(function () {
-    console.log("eventually this function will 1) read file in and build a table");
-//    for (i = 0; i < tableData.length; i++) {
-      $('#custTable').append("<tr>");
-      $('#custTable').append("<td>"+obj1.name+"</td>");
-      $('#custTable').append("<td>"+obj1.email+"</td>");
-      $('#custTable').append("<td>"+obj1.inquiryType+"</td>");
-      $('#custTable').append("<td>"+obj1.phone1+"</td>");
-      $('#custTable').append("<td>"+obj1.ph1type+"</td>");
-      $('#custTable').append("<td>"+obj1.phone2+"</td>");
-      $('#custTable').append("<td>"+obj1.ph2type+"</td>");
-      $('#custTable').append("<td>"+obj1.preferredMOC+"</td>");
-      $('#custTable').append("<td>"+obj1.comment+"</td>");
-      $('#custTable').append("<td>"+obj1.needsFollowUp+"</td>");
-      $('#custTable').append("<td class='row controls'><button class='delete'>Delete</button><button class='update'>Edit</button></td>");
-      $('#custTable').append("</tr>");
+    console.log("before for loop");
+    let htmlText = ("<tr>");
+    for (i = 0; i < myData.length; i++) {
+      console.log("in for loop, i = "+i);
+      htmlText +="<td>"+myData[i].name+"</td>";
+      htmlText += "<td>"+myData[i].email+"</td>";
+      htmlText += "<td>"+[i]+myData[i].inquiryType+"</td>";
+      htmlText += "<td>"+myData[i].phone1+"</td>";
+      htmlText += "<td>"+myData[i].ph1type+"</td>";
+      htmlText += "<td>"+myData[i].phone2+"</td>";
+      htmlText += "<td>"+myData[i].ph2type+"</td>";
+      htmlText += "<td>"+myData[i].preferredMOC+"</td>";
+      htmlText += "<td>"+myData[i].comment+"</td>";
+      htmlText += "<td>"+myData[i].needsFollowUp+"</td>";
+      htmlText += "<td><button class='delete'>Delete</button><button class='update'>Edit</button></td></tr>";
+      //  $('#custTable').append("</tr>");
+      console.log("HTML :"+ htmlText);
+    }  //table html buildings loop
+    $('#custTable').append(htmlText);
 
-//    }  //table loading loop
 /*
     <tr>
       <td>John Jacobson Quagmire Alowicious III</td>
