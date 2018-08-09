@@ -9,7 +9,6 @@
   <meta name="author" content="John Bateman">
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
   <style>
   /*vvvvvvvv CSS GOES BELOW THIS COMMENT vvvvvvvv*/
 
@@ -25,18 +24,71 @@
     background-color: blue;
   }
 
+  table, th, td {
+    border: 1px solid black;
+    padding: 1px;
+}
 
+th, td {
+    text-align: left;
+    vertical-align: top;
+}
   /*^^^^^^^^ CSS GOES ABOVE THIS COMMENT ^^^^^^^^*/
   </style>
 
 </head>
-
 <body>
   <!-- vvvvvvvv HTML GOES BELOW THIS COMMENT vvvvvvvv -->
+
   <h1>For managerial use only</h1>
-  
-    /*^^^^^^^^ JAVASCRIPT GOES ABOVE THIS COMMENT ^^^^^^^^*/
+  <table style="width:100%">
+   <caption>Inquiries - For Management Use Only</caption>
+   <tr>
+     <th>Name</th>
+     <th>Email</th>
+     <th>Property</th>
+     <th>Phone1</th>
+     <th>P1Type</th>
+     <th>Phone2</th>
+     <th>P2Type</th>
+     <th>Preferred MOC</th>
+     <th>Comments</th>
+     <th>Contacted?</th>
+   </tr>
+   <tr>
+     <td>John Jacobson Quagmire Alowicious III</td>
+     <td>jjc_reallylongname@yoohoo.com</td>
+     <td>General</td>
+     <td>415-652-9999</td>
+     <td>Mobile</td>
+     <td>415-545-9999 x89893</td>
+     <td>Business</td>
+     <td>email</td>
+     <td>8/4/18 The quick brown fox jumps over the lazy dog</td>
+     <td>Yes</td>
+   </tr>
+   <tr>
+     <td>John Jacobson</td>
+     <td>jjc@yoohoo.com</td>
+     <td>General</td>
+     <td>415-652-9999</td>
+     <td>Mobile</td>
+     <td>415-545-9999</td>
+     <td>Business</td>
+     <td>email</td>
+     <td>8/4/18 The quick brown fox jumps over the lazy dog but the giant T-Rex tripped over him and fell down and broke his gluteal bone.</td>
+     <td>Yes</td>
+   </tr>
+ </table>
+  <!--vvvvvvvv JAVASCRIPT GOES BELOW THIS COMMENT vvvvvvvv -->
+  <script>
+  $(document).ready(function () {
+    console.log("document ready");
+  });
+
 
   </script>
+  <!-- ^^^^^^^^ JAVASCRIPT GOES ABOVE THIS COMMENT ^^^^^^^^ -->
+
 </body>
 </html>
